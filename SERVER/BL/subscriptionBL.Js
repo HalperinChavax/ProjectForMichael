@@ -93,18 +93,21 @@ const updateSub = (id, obj) => {
 }
 
 
-const deleteSub = (id) => {
+const deleteSub = (movieID) => {
     return new Promise((resolve, reject) => {
-        model.deleteMany({ "MemberId": ObjectId(id) }, (err, data) => {
-            if (err) {
+
+        model.deleteMany({ "MovieID": movieID}, (err) => {
+              if (err) {
                 reject(err)
             } else {
-               
-                resolve("delete 😣")
+                resolve("Subscription deleted👌")
+
             }
+
         })
+
+
     })
 }
-
 
 module.exports = { getAllSubs, getAllMoviesSubs, addSub, updateSub, deleteSub }

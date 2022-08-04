@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const ObjectId = mongoose.Types.ObjectId
 const subModel = require('../Models/subscriptionModel')
 const memberModel = require('../Models/memberModel')
-
+const subBL=require('../BL/subscriptionBL')
 //happend for one time to get the movies from json!!!
 // const jsonFile = path.join(__dirname, "/../shows.json")
 // const getAllMoviesFromJson = () => {
@@ -83,26 +83,17 @@ const updateMovie = (id, obj) => {
 
 const deleteMovie = (id) => {
     return new Promise((resolve, reject) => {
-        model.findByIdAndDelete({ _id: id }, (err, data) => {
+        model.findByIdAndDelete({ _id:id }, (err) => {      
             if (err) {
                 reject(err)
             } else {
-                subModel.findOneAndDelete({ "MovieId": id }, (err, data) => {
-                    if (err) {
-                        reject(err)
-                    }
-                    else {
-                        resolve("delete from sub")
-                    }
-                })
-                resolve(`deleted😪`)
-
+                subBL.deleteSub(id)
+                resolve("Movie deleted🤔")
             }
-            resolve(`deleted😪`)
         })
     })
-
 }
+
 
 
 module.exports = { getAllMovies, getMovieByName, addMovie,updateMovie, deleteMovie }

@@ -94,8 +94,8 @@ const deleteMember = (id) => {
 
         })
     })
-
 }
+
 
 
 module.exports = { getAllMembers, getAllMemberSubs, addMember, updateMember, deleteMember }
