@@ -21,7 +21,7 @@ function MovieComp(props) {
         <b>{props.movie.Name}</b><br />
         {props.movie.YearPremiered}<br />
          <img src={props.movie.ImageUrl} width="300px" height="300px" float="right " position="right"></img><br />
-        {/* Genres:{`"${movie.Genres[0]}", "${movie.Genres[1]}", "${movie.Genres[2]}"`} */}
+        Genres:{`"${props.movie.Genres[0]}", "${props.movie.Genres[1]}", "${props.movie.Genres[2]}"`}
         {<SubsWatched movie={props.movie._id} float="left" position="right"/>} 
 
         <button onClick={edit}>Edit</button>

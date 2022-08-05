@@ -27,7 +27,7 @@ function MoviesWatches(props) {
         {
             moviesWatched && moviesWatched.map((movie, index) => {
                 if (movie != null) {
-                    return <ul key={index}><li> <Link className="link2222" to='/home/movies/movie' state={{ oneMovie: movie }} >{movie.Name}</Link>,
+                    return <ul key={index}><li> <Link className="link2222" to='/home/movies/allMovies' state={{ oneMovie: movie }} >{movie.Name}</Link>,
                         {movie.YearPremiered}</li></ul>
                 }
             })

@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux"
-import axios from "axios"
-import { useState } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
-import MovieComp from "./Movie"
 import EditMovie from "./EditMovie"
 
 

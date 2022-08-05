@@ -6,7 +6,6 @@ import AllMembers from "./AllMembers"
 
 
 function MemberComp(props) {
-console.log(props.member)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
