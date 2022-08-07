@@ -46,9 +46,8 @@ const getAllMoviesSubs = (id) => {
 
 
 const addSub = async (sub) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {  
         
-            model.findOne({ movieId: sub })
             movieModel.findOne({ Name: sub.Name }, (err, data) => {
                 if (err) {
                     reject(err)
@@ -95,8 +94,7 @@ const updateSub = (id, obj) => {
 
 const deleteSub = (movieID) => {
     return new Promise((resolve, reject) => {
-
-        model.deleteMany({ "MovieID": movieID}, (err) => {
+        model.deleteMany({"MovieID": movieID}, (err) => {
               if (err) {
                 reject(err)
             } else {
