@@ -22,7 +22,7 @@ function AllMovies() {
     async function getAllMovies() {
         let { data } = await axios.get("http://localhost:3050/movies")
         setMovies(data)
-        setMoviesToShow(movies)
+        setMoviesToShow(data)
         if (location.state !== null) {
             findMovieFunc()
         }

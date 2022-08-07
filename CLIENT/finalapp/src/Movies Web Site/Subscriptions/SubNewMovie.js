@@ -13,13 +13,12 @@ function SubNewMovie(props) {
 
     const getAllMovies = async () => {
         const {data} = await axios.get(`http://localhost:3050/movies`)
-        props.moviesWatched.forEach(movieWatched => {
+        props.moviesWatched&& props.moviesWatched.forEach(movieWatched => {
             const index=data.findIndex(movie=>movie._id==movieWatched._id)
             data.splice(index,1)
         })
-        setMovies(data)
+        setMovies([...data])
     }
-
 
 
     function handleInput(e) {
@@ -43,6 +42,7 @@ function SubNewMovie(props) {
         else {
             let { data } = await axios.post(`http://localhost:3050/sub`, sub)
             alert(data)
+            window.location.reload()
         }
     }
 
@@ -62,5 +62,6 @@ function SubNewMovie(props) {
 
 }
 export default SubNewMovie
+
 
 
