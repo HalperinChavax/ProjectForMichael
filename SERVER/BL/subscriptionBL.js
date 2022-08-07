@@ -47,7 +47,6 @@ const getAllMoviesSubs = (id) => {
 
 const addSub = async (sub) => {
     return new Promise((resolve, reject) => {  
-        
             movieModel.findOne({ Name: sub.Name }, (err, data) => {
                 if (err) {
                     reject(err)
